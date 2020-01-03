@@ -1,0 +1,26 @@
+<p>welcome to mongodb</p>
+<div style="overflow-x:auto;">
+    <table width="1300" border="6">
+
+        <tr>
+            <th>orderId</th>
+            <th>orderDate</th> 
+            <th>name</th>
+            <th>contact</th>
+            
+            <th>orderStatus</th>
+          </tr>
+<%for(let i=0;i<length;i++){%>
+     <tr>
+      <td><%=result1[i].orderId%></td>
+      <td><%=result1[i].orderDate%></td>
+      
+      <td><%=result1[i].name%></td>
+      
+      <td><%=result1[i].contact%></td>
+      
+      <td><%=result1[i].orderStatus%></td>
+    </tr>
+<%}%>
+    </table>
+    </div>
