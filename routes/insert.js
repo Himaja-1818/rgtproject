@@ -9,18 +9,22 @@ router.get('/insert', function(req, res, next) {
     mongoConnection().then((client) => {
         const db = client.db(dbName);
         const collection = db.collection("rgt");
-for(i=1;i<=100;i++)
+for(i=1;i<=50;i++)
 {
     var myobj = { orderId: Math.floor(100000 + Math.random() * 900000),
                   orderDate: new Date().toJSON().slice(0,10).replace(/-/g,'/'),
-                   name:'himaja',
-                   contact:9751558565,
-                   orderStatus:'success'
+                   name:'gopal',
+                   contact:97515578465,
+                   orderStatus:'failed'
      };
     collection.insertOne(myobj, function(err, result) {
-      if (err) throw err;
+     // if (err) throw err;
+     if(err)
+       {
+         console.log(err);
+        }
       console.log("1 document inserted");
-      db.close();
+     // db.close();
       res.render('insertview',{
         result1:result,
        
